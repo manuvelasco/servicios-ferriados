@@ -1,0 +1,3327 @@
+/********************
+* INDEX OF CONTENT
+* ******************
+* 0. Global
+*   0.1 Temporary
+* 1. Layout
+*   1.1 Header
+*   1.2 Main menu
+*   1.3 Main content
+*   1.4 Footer
+*   1.5 Ads
+*   1.6 Menu preheader
+* 2. Second sidebar
+*   2.1 Last news
+*   2.2 Home Icons
+*   2.3 Bloque noticias grupo el Deber
+* 3. Weather
+* 4. Eventos
+*    4.1 Eventos Node
+*    4.2 Eventos block
+* 5. Lugares
+*    5.1 Lugares Node
+* 6. Juegos
+* 7. Horoscopo
+* 8. Calendario feriados
+* 9. Horario de vuelos
+* 10. Rss
+* 11. Cotizaciones
+* 12. Modal form styles
+* 13. Mapas
+*   13.1 Block mapas
+*   13.2 Atachmment Mapas Sucursales
+* 14. Newsletter page
+********************/
+
+
+
+/**
+ * 0. GLOBAL
+ */
+@font-face {
+ font-family: "GeorgiaBold";
+ src: url("../fonts/Georgia-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Georgia-Bold.ttf") format("truetype"), url("../fonts/Georgia-Bold.woff") format("woff");
+}
+@font-face {
+ font-family: "FlamaSemicondensed-Book";
+ src: url("../fonts/FlamaSemicondensed-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Book.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Book.woff") format("woff"), url("../fonts/FlamaSemicondensed-Book.svg#8f74c24fa67c67a2e58ac11d13903272") format("svg");
+}
+@font-face {
+ font-family: "GeorgiaRegular";
+ src: url("../fonts/Georgia-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Georgia-Regular.ttf") format("truetype"), url("../fonts/Georgia-Regular.woff") format("woff");
+}
+@font-face {
+ font-family: "FlamaSemicondensed-Basic";
+ src: url("../fonts/FlamaSemicondensed-Basic.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Basic.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Basic.woff") format("woff"), url("../fonts/FlamaSemicondensed-Basic.svg#8f74c24fa67c67a2e58ac11d13903272") format("svg");
+}
+@font-face {
+ font-family: "FlamaSemicondensed-Bold";
+ src: url("../fonts/FlamaSemicondensed-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Bold.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Bold.woff") format("woff"), url("../fonts/FlamaSemicondensed-Bold.svg#8f74c24fa67c67a2e58ac11d13903272") format("svg");
+}
+@font-face {
+ font-family: "Flama-Light";
+ src: url("../fonts/Flama-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Flama-Light.ttf") format("truetype"), url("../fonts/Flama-Light.woff") format("woff"), url("../fonts/Flama-Light.svg#8f74c24fa67c67a2e58ac11d13903272") format("svg");
+}
+@font-face {
+ font-family: "Flama-Bold";
+ src: url("../fonts/Flama-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Flama-Bold.ttf") format("truetype"), url("../fonts/Flama-Bold.woff") format("woff"), url("../fonts/Flama-Bold.svg#8f74c24fa67c67a2e58ac11d13903272") format("svg");
+}
+@font-face {
+ font-family: "FlamaCondensed-Bold";
+ src: url("../fonts/FlamaCondensed-Bold.ttf") format("truetype");
+}
+@font-face {
+ font-family: "Helvetica-mac";
+ src: url("../fonts/helvetica-mac2.ttf") format("truetype");
+}
+@font-face {
+ font-family: "Helvetica-mac-light";
+ src: url("../fonts/Helvetica-mac-light.ttf") format("truetype");
+}
+
+
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+ cursor: pointer;
+}
+button, select {
+ text-transform: none;
+}
+button {
+ overflow: visible;
+}
+button, input, optgroup, select, textarea {
+ color: inherit;
+ font: inherit;
+ margin: 0;
+}
+
+h1{
+    font-family: "FlamaSemicondensed-Book";
+    font-weight: normal;
+    text-align: center;
+    font-size: 3.5em;
+    margin: 10px 0px;
+}
+h2{
+    font-family: "GeorgiaBold";
+    font-weight: normal;
+    font-size: 2.5em;
+}
+a{
+    color: #333;
+}
+
+#breadcrumb{
+    display: none;
+}
+
+#page{
+  background-color: #fff;
+}
+#main-content{
+  margin: 0px;
+}
+
+/** Pager */
+.pager{
+    font-size: 15px;
+}
+.pager .pager-current{
+    color: #0cf;
+    font-weight: normal !important;
+}
+.pager a{
+    color: #ccc;
+    text-decoration: none;
+}
+.pager a:hover{
+    color: #000;
+}
+.pager .pager-next a{
+    background-image: url("../images/pagination.png");
+    background-position: -9px 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 16px;
+    text-indent: -10000px;
+    width: 9px;
+    margin-bottom: -2px;
+}
+.pager .pager-next a:hover{
+    background-position: -9px -16px;
+}
+
+.pager .pager-previous a{
+    background-image: url("../images/pagination.png");
+    background-position: 0px 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 16px;
+    text-indent: -10000px;
+    width: 9px;
+    margin-bottom: -2px;
+}
+.pager .pager-previous a:hover{
+    background-position: 0px -16px;
+}
+
+.item-list-pager{
+  padding: 10px;
+}
+
+.openlayers-popup a{
+  color: #fff;
+}
+/** 
+ * 0.1 TEMPORARY
+ */
+#block-eldeber-ads-i-int-a .content,
+#block-eldeber-ads-i-int-b .content{
+    background-image: url("../images/ads-top-a.jpg");
+    width: 728px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+/**
+ * 1. LAYOUT
+ */
+body{
+ background-color: #eaeaea;
+ font-size: 62.5%;
+ font-family: Arial,sans-serif;
+}
+
+.branding-elements{
+ margin: 0px;
+}
+#columns{
+ background-color: #fff;
+ margin-bottom: 20px;
+}
+.floatLeft{
+    float: left;
+}
+.floatRigth{
+    float: right;
+}
+.clear {
+    clear: both;
+}
+.sidebar-second .content-inner{
+  margin: 0px !important;
+}
+.region-sidebar-second{
+  float: right !important;
+  margin: 0px !important;
+}
+.front .region-sidebar-second{
+    margin-top: 10px !important;
+}
+.region-sidebar-first{
+  width: 780px;
+  margin-left: 0px !important;
+}
+.region-sidebar-first .block-inner{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.two-sidebars .content-inner{
+  margin: 0px !important;
+}
+#branding .user-menu .ctools-use-modal.ctools-modal-modal-popup-medium.login-link.ctools-use-modal-processed,
+.menu-2.first > a {
+    border: 1px solid #fff;
+    padding: 4px;
+}
+.user-menu.floatRight {
+    float: right;
+    margin-bottom: 15px;
+    margin-top: 9px;
+}
+#secondary-menu-bar {
+    margin: 0 !important;
+}
+.menu.secondary-menu.clearfix .menu-15.last > a {
+    padding-right: 0 !important;
+}
+#secondary-menu-bar .secondary-menu-wrapper.menu-wrapper.clearfix {
+    margin-right: 0 !important;
+}
+
+.head-block{
+  color: #fff;
+  overflow: hidden;
+  padding: 20px 35px;
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 30px;
+  position: relative;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.head-block h1{
+  font-size: 40px;
+  font-family: "FlamaCondensed-Bold";
+  margin: 0px;
+}
+.head-block .subtitle{
+  position: absolute;
+  right: 25px;
+  top: 30px;
+}
+
+.head-block .content-select{
+    overflow: hidden;
+    background-image: url("../images/dropdown.png");
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 150px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+.leyenda .content-select{
+    overflow: hidden;
+    background-image: url("../images/dropdown.png");
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 150px;
+    
+}
+.head-block select, .leyenda select{
+  background-color: transparent;
+  border:none;
+  width: 165px;
+}
+.head-block select option .leyenda select{
+  background-color: #fff;
+  color: #333;
+  padding: 5px 0px;
+}
+
+.view-header.head-block .views-exposed-widget.views-widget-filter-field_fecha_feriado_value2{
+    display: none;
+}
+.leyenda .views-exposed-widget.views-widget-filter-field_tipo_de_dia_tid {
+    display: none;
+}
+.view-id-calendario_de_feriados .leyenda {
+    background: #ff7f00 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 7px;
+    padding: 10px;
+}
+.leyenda .views-exposed-widgets {
+    margin-bottom: 0;
+}
+.leyenda .date-year.form-select, .leyenda .date-year.form-select option {
+    margin: 0;
+}
+
+.sharethis-buttons{
+  text-align: right;
+  clear: both;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-image: url("../images/pattern-bg.png");
+}
+#content-column{
+  font-family: "Helvetica-mac-light";
+}
+#main-content-header h1#page-title{
+  display: none;
+}
+
+/**
+ * 1.1 HEADER
+ */
+#header{
+    background-color: #13683e;
+}
+#header a{
+ color: #fff;
+}
+.logo-container{
+ overflow: hidden;
+ padding: 15px 0 0;
+ width: 380px;
+ float: left;
+ font-family: "GeorgiaBold";
+}
+.logo-container a{
+  color: #fff;
+  text-decoration: none;
+ }
+.logo-container .site-name{
+ font-size: 2.1em;
+ line-height: 24px;
+ display: block;
+}
+.logo-container .category-name{
+ font-size: 6.5em;
+ line-height: 67px;
+ display: block;
+}
+#header .header-right{
+ width: 338px;
+ float: right;
+ padding-right: 0px;
+}
+#header .header-social{
+ float: right;
+ margin: 20px 0 15px;
+ list-style: none;
+}
+#header .header-social li{
+ float: right;
+ margin-right: 5px;
+}
+#header .header-social .social-icon{
+ background-repeat: no-repeat;
+ height: 20px;
+ width: 20px;
+ display: block;
+}
+#header .header-social .social-icon.rss{
+ background-image: url("../images/social/rss-white.png");
+}
+#header .header-social .social-icon.twitter {
+ background-image: url("../images/social/twitter-white.png");
+}
+#header .header-social .social-icon.facebook {
+ background-image: url("../images/social/facebook-white.png");
+}
+#header .header-social .social-icon.gplus {
+ background-image: url("../images/social/gplus-white.png");
+}
+#header .search {
+ float: right;
+ text-align: right;
+ width: 100%;
+}
+#header .search button {
+ background: url("../images/header-search-button.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+ border: 0 none;
+ color: #333;
+ float: right;
+ height: 19px;
+  width: 52px;
+}
+#header .search .search-input {
+ background: url("../images/header-search-input.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+ border: 0 none;
+ color: #333;
+ float: right;
+ height: 19px;
+ padding-left: 10px;
+ width: 97px;
+}
+.weather{
+    float: left;
+}
+.icon{
+ width: 77px;
+ height: 50px;
+ position: absolute;
+ margin-top: 20px;
+ background-size: 77px;
+}
+.degrees{
+ display: inline-block;
+ margin-left: 54px;
+ margin-top: 30px;
+ font-size: 13px;
+ line-height: 1em;
+}
+
+/** HEADER MOBILE*/
+.leyenda-movil{
+    overflow: hidden;
+}
+.leyenda-movil .logo-int{
+    float: left;
+    margin-right: 10px;
+
+}
+
+/**
+ * 1.2 MAIN MENU
+ */
+#branding{
+    position: relative;
+}
+#branding .responsive-menus{
+    float: right;
+    margin-top: 10px;
+}
+.responsive-menus .toggler{
+    background-image: url("../images/movil_menu.png") !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+#primary-menu-bar{
+ margin-top: 10px;
+ max-width: 640px;
+}
+#primary-menu-bar .primary-menu-wrapper{
+ margin:0px;
+}
+#primary-menu-bar .primary-menu-wrapper > ul.menu {
+ display: inline-block;
+}
+#primary-menu-bar .primary-menu-wrapper > ul.menu li {
+ float: left;
+ position: relative;
+ text-transform: uppercase;
+ width: 70px;
+ margin: 0 5px;
+}
+#primary-menu-bar .primary-menu-wrapper > ul.menu a {
+  background-image: url("../images/menu.png");
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 35px 0 7px;
+  position: relative;
+  font-family: "FlamaSemicondensed-Book";
+  font-size: 1.1em;
+  white-space: normal;
+  text-align: center;
+  line-height: 16px;
+}
+.menu-217 a{background-position: -565px 5px;}
+.menu-495 a{background-position: -245px 5px;}
+.menu-491 a{background-position: -645px 5px;}
+.menu-616 a{background-position: -405px 5px;}
+.menu-557 a{background-position: -85px 5px;}
+.menu-741 a{background-position: 0px 5px;}
+.menu-528 a{background-position: -325px 5px;}
+.menu-745 a{background-position: -485px 5px;}
+
+.menu-217 a:hover, .menu-217 a.active{ background-position: -565px -105px;}
+.menu-495 a:hover, .menu-495 a.active{ background-position: -245px -105px;}
+.menu-491 a:hover, .menu-491 a.active{ background-position: -645px -105px;}
+.menu-616 a:hover, .menu-616 a.active{ background-position: -405px -105px;}
+.menu-557 a:hover, .menu-557 a.active{ background-position: -85px -105px;}
+.menu-741 a:hover, .menu-741 a.active{ background-position: 0px -105px;}
+.menu-528 a:hover, .menu-528 a.active{ background-position: -325px -105px;}
+.menu-745 a:hover, .menu-745 a.active{ background-position: -485px -105px;}
+
+/**
+ * 1.3 MAIN CONTENT
+ */
+
+
+
+/**
+ * 1.4 FOOTER
+ */
+#footer{
+ background-color: #505050;
+ color: #333;
+ overflow: hidden;
+ padding-bottom: 30px;
+}
+#footer #secondary-menu-bar{
+ margin: 0px;
+}
+#footer .footer-logo {
+    background-image: url("../images/footer-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 44px;
+    padding: 0 0 25px;
+}
+
+#footer .block .menu ul li{
+ color: #666;
+ list-style: none;
+ display: inline-block;
+ margin-left: 17px;
+ position: relative;
+ text-transform: uppercase;
+ font-family: "FlamaSemicondensed-Basic";
+ line-height: 16px;
+}
+
+
+/*footer redes sociales*/
+
+#footer #block-eldeber-footer-rs .block-title{
+ display: none;
+}
+
+#footer .block .menu li{
+    list-style: none;
+}
+#footer .block .menu li a{
+    color: #a9a9a9;
+}
+
+/*footer Social*/
+#footer  .footer-rs{
+    padding: 0px;
+    width: 150px;
+    list-style: none;
+    overflow: hidden;
+    margin-right: 30px;
+}
+#footer .footer-rs li{
+    float: left;
+    margin: 0px 3px;
+}
+#footer .footer-rs li a{
+    background-image: url("images/social_links.png");
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+#footer .footer-rs li.facebook a{
+    background-position:0 -20px;
+}
+#footer .footer-rs li.twitter a{
+    background-position:0 -40px;
+}
+#footer .footer-rs li.rss a{
+    background-position:0 0px;
+}
+#footer .footer-rs li.google a{
+    background-position:0 -60px;
+}
+#footer .footer-rs li.youtube a{
+    background-position:0 -80px;
+}
+#footer #block-system-main-menu ul li:first-child{
+ margin-left: 0;
+}
+
+#footer .footer-pre-content {
+  background-color:#484747;
+  height: 90px;
+  padding-top: 20px;
+  width: 100%;
+}
+#footer  .logo {
+  background-image: url("../images/logo-servicios.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: block;
+  height: 54px;
+  width: 203px;
+}
+.block.block-system.contextual-links-region.block-menu, .block.block-menu.contextual-links-region {
+    float: left;
+}
+#footer li {
+    list-style: outside none none;
+}
+#footer li a {
+    color: #8b8b8b;
+    font-size: 14px;
+}
+#footer .block-title {
+    color: white;
+    border-top: 5px solid green;
+    font-family: arial;
+    font-size: 1.4em;
+    font-weight: normal;
+    height: 30px;
+    line-height: 42px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#footer .block-content ul {
+    margin: 0;
+    padding: 0;
+}
+#footer .block-menu{
+    margin: 0 30px 0 0;
+}
+#footer .block-menu .block-inner{
+  margin: 0px;
+}
+#footer #block-eldeber-footer-rs {
+    padding-top: 12px;
+    width: 105px;
+    float: right;
+}
+
+.region.region-footer .block.block-menu {
+    float: left;
+    width: 14%;
+}
+.region.region-footer .block-title {
+    text-align: left !important;
+}
+
+
+/**
+ * 1.5 ADS
+ */
+.region-header{
+    margin: 0 auto;
+    width: 1060px;
+}
+.region-header .block{
+ float: left;
+ margin: 10px;
+}
+.region-header .block .block-inner{
+ margin:0px;
+}
+.region-header #block-eldeber-ads-h-top-b,
+.region-header #block-eldeber-ads-i-top-b{
+    float: right;
+}
+.region-header #block-eldeber-ads-h-sky-left,
+.region-header #block-eldeber-ads-i-sky-left {
+ left: -125px;
+ top: 0;
+}
+.region-header #block-eldeber-ads-h-sky-right,
+.region-header #block-eldeber-ads-i-sky-right{
+ right: -125px;
+ top: 0;
+}
+.region-header #block-eldeber-ads-h-sky-left,
+.region-header #block-eldeber-ads-i-sky-left,
+.region-header #block-eldeber-ads-h-sky-right,
+.region-header #block-eldeber-ads-i-sky-right {
+ overflow: hidden;
+ position: absolute;
+ width: 120px;
+}
+
+#block-eldeber-ads-m-h-top,
+#block-eldeber-ads-m-i-top,
+#block-eldeber-ads-m-h-bottom,
+#block-eldeber-ads-m-i-bottom{
+    margin: 0 auto;
+    width: 320px;
+    display: block;
+    float: none;
+    padding: 25px 0px;
+    background-image: url("../images/shadow.png");
+    background-position: center 80px;
+    background-repeat: no-repeat;
+}
+
+#block-eldeber-ads-m-h-top .block-inner,
+#block-eldeber-ads-m-i-top .block-inner,
+#block-eldeber-ads-m-h-bottom .block-inner,
+#block-eldeber-ads-m-i-bottom .block-inner{
+
+}
+
+/**
+* 1.6 Menu preheader
+*/
+.menu-preheader{
+  background-color: #939393;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-top: 5px; padding-bottom: 5px;
+}
+.menu-preheader .content-preheader{
+  text-align: center;
+  width: 1140px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.menu-preheader .content-preheader ul li{
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.menu-preheader .content-preheader ul li a{
+  color: #fff; text-decoration: none;
+}
+.menu-preheader .content-preheader ul li a:hover,
+.menu-preheader .content-preheader ul li a:active{
+  color: #00ff23;  text-decoration: none;
+}
+.content-preheader .links {
+    display: inline-block;
+}
+
+
+
+/**
+ * 2. SECOND SIDEBAR
+ */
+
+.region-sidebar-second .block-inner{
+  margin: 0px;
+}
+
+/**
+ * 2.1 LAST NEWS
+ */
+#block-eldeber-eldeber-ultimas{
+ margin: 0 0 15px;
+ padding: 0 10px 10px;
+}
+#block-eldeber-eldeber-ultimas .block-inner{
+ margin: 0px;
+}
+#block-eldeber-eldeber-ultimas .block-title{
+ font-family: "FlamaSemicondensed-Book";
+ font-size: 1.4em;
+ line-height: 42px;
+ text-transform: uppercase;
+ font-weight: normal;
+ text-align: center;
+
+ border-bottom-width: 2px;
+ border-bottom-color: #EEEEEE;
+ border-bottom-style: solid;
+ border-top: 0 none;
+ color: #360;
+ margin-bottom: 10px;
+}
+
+#block-eldeber-eldeber-ultimas .block-title:before {
+    background: none repeat scroll 0 0 #a4aca3;
+    content: "";
+    height: 4px;
+    left: 50%;
+    margin-left: -26px;
+    position: absolute;
+    top: 0;
+    width: 52px;
+    margin-top: -4px;
+}
+
+#block-eldeber-eldeber-ultimas .latest-container {
+    height: 454px;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+#block-eldeber-eldeber-ultimas .listing-item {
+    border-top: 1px solid #eee;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding-top: 7px;
+    font-size: 1.2em;
+    line-height: 14px;
+}
+#block-eldeber-eldeber-ultimas .listing-category {
+    color: #000;
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+#block-eldeber-eldeber-ultimas .listing-date {
+    color: #989494;
+    float: right;
+    font-size: 0.9em;
+}
+#block-eldeber-eldeber-ultimas .listing-title {
+    float: left;
+    margin: 15px 0;
+    width: 100%;
+}
+#block-eldeber-eldeber-ultimas .listing-title a {
+    color: #000;
+    font-weight: bold;
+}
+#block-eldeber-eldeber-ultimas .listing-epigraph {
+    color: #000;
+    float: left;
+    width: 100%;
+}
+
+/**
+* 2.2 Home icons
+*/
+#block-eldeber-home-page{
+  border: 0px solid #eee;
+    margin: 0 ;
+    padding: 0 1px 1px;
+}
+.servicios{
+        overflow: hidden;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .servicios .items{
+        float: left;
+        margin: 0 15px;
+      }
+      .servicios .items .item-inside{
+        font-family: "FlamaSemicondensed-Bold";
+        overflow: hidden;
+        width: 339px;
+        color: #000000;
+        padding: 15px 15px 15px 15px;
+        min-height: 115px;
+
+        -moz-border-radius: 10px 10px; 
+        -webkit-border-radius: 10px 10px; 
+        border-radius: 10px 10px; 
+      }
+      .servicios .items .mapas{ background-color: #d5544e;}
+      .servicios .items .newsletter{ background-color: #a5cc01;}
+      .servicios .items .eventos{ background-color: #b3773b;}
+      .servicios .items .feriados{ background-color: #ff9710;}
+      .servicios .items .vuelos{ background-color: #17a086;}
+      .servicios .items .cotizaciones{ background-color: #0cc2c5;}
+      .servicios .items .clima{ background-color: #2d6bc2;}
+      .servicios .items .horoscopo{ background-color: #cab400;}
+
+      .servicios .items .item-inside .text{
+        width: 230px;
+        text-align: left;
+        float: left;
+      }
+      .servicios .items .item-inside .descrip{
+        color: #fff;
+        font-size: 14px;
+        font-family: arial;
+      }
+      .servicios .items .item-inside .title{
+        color: #fff;
+        text-align: left; 
+        font-size: 30px; line-height: 30px; font-weight: normal; padding-bottom:10px;
+      }
+      .servicios .items .item-inside .icono{
+        float: right;
+        width: 100px; height: 100px;
+      }
+
+
+/**
+* 2.3 Bloque noticias grupo el Deber
+*/
+#block-eldeber-noticias-grupoed{
+  border: 0px solid #eee;
+  margin: 0 ;
+  padding: 0;
+}
+#block-eldeber-noticias-grupoed .head > a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+.grupoed-ed, .grupoed-diez, .grupoed-sociales{
+  width: 100%;
+  overflow: hidden;
+  border: 3px solid #eee;
+  /*-moz-border-radius: 0px 30px 0px 0px; /* Firefox */
+    /*-webkit-border-radius: 0px 30px 0px 0px; /* Google Chrome y Safari */
+    /*border-radius: 0px 30px 0px 0px; /* CSS3 (Opera 10.5 e Internet Explorer 9) */
+    clear: both;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.grupoed-ed .head{
+  background-color: #014b18;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  /*-moz-border-radius: 0px 30px 0px 0px; /* Firefox */
+    /*-webkit-border-radius: 0px 30px 0px 0px; /* Google Chrome y Safari */
+    /*border-radius: 0px 30px 0px 0px; /* CSS3 (Opera 10.5 e Internet Explorer 9) */
+    clear: both;
+}
+.grupoed-diez .head{
+  background-color: #449b18;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  /*-moz-border-radius: 0px 30px 0px 0px; /* Firefox */
+    /*-webkit-border-radius: 0px 30px 0px 0px; /* Google Chrome y Safari */
+    /*border-radius: 0px 30px 0px 0px; /* CSS3 (Opera 10.5 e Internet Explorer 9) */
+    clear: both;
+}
+.grupoed-sociales .head{
+  background-color: #c9105e;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  /*-moz-border-radius: 0px 30px 0px 0px; /* Firefox */
+    /*-webkit-border-radius: 0px 30px 0px 0px; /* Google Chrome y Safari */
+    /*border-radius: 0px 30px 0px 0px; /* CSS3 (Opera 10.5 e Internet Explorer 9) */
+    clear: both;
+}
+.grupoed-ed .head img{
+  text-align: center;
+}
+.grupoed-ed .container,
+.grupoed-diez .container,
+.grupoed-sociales .container{
+  overflow: hidden;
+  width: 100%;
+}
+.grupoed-ed .container .item,
+.grupoed-diez .container .item,
+.grupoed-sociales .container .item{
+  width: 244px; 
+  float: left;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.grupoed-ed .container .item img,
+.grupoed-diez .container .item img,
+.grupoed-sociales .container .item img{
+  width: 242px;
+  height: 121px;
+}
+.grupoed-ed .container .item .title-ed,
+.grupoed-diez .container .item .title-diez,
+.grupoed-sociales .container .item .title-sociales{
+   text-align: left;
+    font-family: "GeorgiaBold";
+    color: #333;
+    font-size: 1.5em;
+    line-height: 1.2em;
+}
+
+
+
+/**
+ * 3. WEATHER
+ */
+.page-clima-en-bolivia #block-system-main .content-tabs{
+    background-image: url("../images/multimedia-grey.png");
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+.page-clima-en-bolivia #block-system-main .clima-title{
+    color: #0cf;
+    font-family: "Flama-Light";
+    font-size: 3.2em;
+    line-height: 34px;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+#tabmenu{
+    background-color: #000;
+    color: #fff;
+    margin: 15px 0px;
+}
+#tabmenu ul.tabs{
+    background-color: #000;
+    display: table;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 auto;
+    padding: 0 12px;
+    position: relative;
+    z-index: 2;
+    list-style: none;
+}
+#tabmenu ul.tabs li{
+    font-family: "FlamaSemicondensed-Book";
+    font-size: 18px;
+        float: left;
+    line-height: 38px;
+    margin: -3px 0;
+    padding: 0 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#tabmenu ul.tabs li.actual{
+    background-color: rgba(255, 255, 0, 0.38);
+    cursor: auto;
+}
+
+
+#weather {
+    background-color: #fff;
+    margin: 0 10px;
+    padding: 10px;
+    min-height: 426px;
+}
+.hoy{
+    padding: 10px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    max-width: 480px;
+}
+.dias{
+    margin: 15px auto 0;
+    overflow: hidden;
+    max-width: 350px;
+}
+.dias ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.dias li{
+    display: block;
+    float: left;
+}
+.dia{
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 5px;
+    background: #92cb92;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    float: left;
+    font: 14px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border-color: #4F804E;
+    border-width: 1px;
+    border-style: solid;
+}
+.mx{
+    color: #AA2F4A;
+    margin-left: 5px;
+    font: 14px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.mn{
+    color: #636FC7;
+    margin-left: 5px;
+    font: 14px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.max{
+    color: #AA2F4A;
+    margin-left: 5px;
+    float: left;
+    font: 14px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background: #ebf3ee;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    border-color: #B5C3BA;
+    border-width: 1px;
+    border-style: solid;
+}
+.min{
+    color: #636FC7;
+    margin-left: 5px;
+    float: right;
+    font: 14px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background: #ebf3ee;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    border-color: #B5C3BA;
+    border-width: 1px;
+    border-style: solid;
+}
+.dpto {
+    margin: 0 0 8px;
+    color: #000;
+    font-size: 38px;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+#weather .currently {
+    margin: 0 20px;
+}
+
+/* Sun Widget */
+
+.sun-ini{
+    fill : #F3CD12;
+}
+.sun-fin{
+    fill: #F26E14;
+}
+.orbit{
+    stroke : #EDEDED;
+    fill:none;
+}
+#planetarium{
+    height: 200px;
+    width: 320px;
+}
+
+
+.page-clima-en-bolivia {
+ font-family: helvetica, arial;
+}
+.page-clima-en-bolivia #page-title{
+  display: none;
+}
+.page-clima-en-bolivia #content-column{
+ background-image: url("../images/background_clima.jpg");
+ background-position: center top;
+ background-repeat: no-repeat;
+ background-color: #fff;
+ margin-bottom: 10px;
+}
+.page-clima-en-bolivia .block-blue{
+ background-image: url("../images/rect_azul.png");
+}
+
+.page-clima-en-bolivia .block-grey{
+ background-image: url("../images/rect_gris.png");
+ padding: 20px 35px;
+ margin-bottom: 10px;
+ color: #fff;
+ font-size:20px;
+
+  border-radius: 5px;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+}
+.page-clima-en-bolivia .block-grey .title,
+.page-clima-en-bolivia .footer .title{
+  font-size: 24px;
+}
+.page-clima-en-bolivia .temp{
+  color: #fff;
+  font-size: 90px;
+  font-weight: 100;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+.page-clima-en-bolivia .prediction{
+ overflow: hidden;
+}
+.page-clima-en-bolivia .prediction .today{
+ float: left;
+}
+.page-clima-en-bolivia .prediction .today .title{
+ font-size: 20px;
+}
+.page-clima-en-bolivia .prediction .today .temp-min-max span{
+ font-size: 10px;
+}
+.page-clima-en-bolivia .prediction .next-days{
+  float: right;
+  overflow: hidden;
+  font-size: 17px;
+}
+.page-clima-en-bolivia .prediction .next-days .day{
+ float: left;
+ text-align: center;
+ margin: 0 30px;
+}
+.page-clima-en-bolivia .container-info{
+  overflow: hidden;
+}
+.page-clima-en-bolivia .container-info .info-block span{
+ color: #94cbf2;
+ padding-right: 10px;
+}
+.page-clima-en-bolivia .container-info .info-block{
+  overflow: hidden;
+  min-width: 600px;
+}
+.page-clima-en-bolivia .container-info .info-block .visibilidad{
+  background-image: url("../images/iconos_detalles.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  font-size: 15px;
+  float: left;
+}
+.page-clima-en-bolivia .container-info .info-block .humedad{
+  background-image: url("../images/iconos_detalles.png");
+  background-position: 0px -20px;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  font-size: 15px;
+  float: left;
+  margin-left: 10px;
+}
+.page-clima-en-bolivia .container-info .info-block .update{
+  background-image: url("../images/iconos_detalles.png");
+  background-position: 0px -45px;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  font-size: 15px;
+  float: left;
+  margin-left: 10px;
+}
+.page-clima-en-bolivia .viento-block{
+  float: left;
+  height: 155px;
+  margin-left: 10px;
+  width: 260px;
+  background-color: #73cad1;
+  background-image: none;
+}
+.page-clima-en-bolivia .viento-block .eloic{
+  position: relative;
+  padding-right: 25px;
+}
+.page-clima-en-bolivia .viento-block .eloic .torre{
+  position: absolute;
+  left: 43px;
+  top: 57px;
+}
+.page-clima-en-bolivia .viento-block .eloic #aspas{
+  z-index: 10;
+}
+.page-clima-en-bolivia .viento-block .label{
+  font-size: 17px;
+}
+.page-clima-en-bolivia .viento-block .value{
+  color: #3b5e7a;
+}
+.page-clima-en-bolivia .sol-block{
+  width: 260px;
+  float: left;
+  height: 155px;
+  background-color: #5ca9d3;
+  background-image: none;
+}
+.page-clima-en-bolivia .today .image{
+  float: right;
+  height: 127px;
+  width: 127px;
+  margin-top: 30px;
+  margin-left: 35px;
+}
+.page-clima-en-bolivia .weather-0,
+.page-clima-en-bolivia .weather-1,
+.page-clima-en-bolivia .weather-2{
+  background-image: url("../images/clima/iconos/parcialmente_nublado.png");
+}
+.page-clima-en-bolivia .weather-3,
+.page-clima-en-bolivia .weather-4{
+  background-image: url("../images/clima/iconos/tormenta_electrica.png");
+}
+.page-clima-en-bolivia .weather-5{
+  background-image: url("../images/clima/iconos/lluvia.png");
+}
+.page-clima-en-bolivia .weather-6,
+.page-clima-en-bolivia .weather-7{
+  background-image: url("../images/clima/iconos/nieve.png");
+}
+.page-clima-en-bolivia .weather-8,
+.page-clima-en-bolivia .weather-9,
+.page-clima-en-bolivia .weather-10,
+.page-clima-en-bolivia .weather-11,
+.page-clima-en-bolivia .weather-12{
+  background-image: url("../images/clima/iconos/lluvia.png");
+}
+.page-clima-en-bolivia .weather-13,
+.page-clima-en-bolivia .weather-14,
+.page-clima-en-bolivia .weather-15,
+.page-clima-en-bolivia .weather-16{
+  background-image: url("../images/clima/iconos/nieve.png");
+}
+.page-clima-en-bolivia .weather-17{
+  background-image: url("../images/clima/iconos/granizo.png");
+}
+.page-clima-en-bolivia .weather-18{
+  background-image: url("../images/clima/iconos/nieve.png");
+}
+.page-clima-en-bolivia .weather-19{
+  background-image: url("../images/clima/iconos/polvo.png");
+}
+.page-clima-en-bolivia .weather-20,
+.page-clima-en-bolivia .weather-21,
+.page-clima-en-bolivia .weather-22,
+.page-clima-en-bolivia .weather-23{
+  background-image: url("../images/clima/iconos/neblina.png");
+}
+.page-clima-en-bolivia .weather-24{
+  background-image: url("../images/clima/iconos/ventoso.png");
+}
+.page-clima-en-bolivia .weather-25,
+.page-clima-en-bolivia .weather-26{
+  background-image: url("../images/clima/iconos/neblina.png");
+}
+.page-clima-en-bolivia .weather-27,
+.page-clima-en-bolivia .weather-28,
+.page-clima-en-bolivia .weather-29,
+.page-clima-en-bolivia .weather-30{
+  background-image: url("../images/clima/iconos/parcialmente_nublado.png");
+}
+.page-clima-en-bolivia .weather-31,
+.page-clima-en-bolivia .weather-32,
+.page-clima-en-bolivia .weather-33,
+.page-clima-en-bolivia .weather-34{
+  background-image: url("../images/clima/iconos/despejado.png");
+}
+.page-clima-en-bolivia .weather-35{
+  background-image: url("../images/clima/iconos/granizo.png");
+}
+.page-clima-en-bolivia .weather-36{
+  background-image: url("../images/clima/iconos/despejado.png");
+}
+.page-clima-en-bolivia .weather-37,
+.page-clima-en-bolivia .weather-38,
+.page-clima-en-bolivia .weather-39{
+  background-image: url("../images/clima/iconos/tormenta_electrica.png");
+}
+.page-clima-en-bolivia .weather-40{
+  background-image: url("../images/clima/iconos/lluvia.png");
+}
+.page-clima-en-bolivia .weather-41,
+.page-clima-en-bolivia .weather-42,
+.page-clima-en-bolivia .weather-43{
+  background-image: url("../images/clima/iconos/nieve.png");
+}
+.page-clima-en-bolivia .weather-44{
+  background-image: url("../images/clima/iconos/parcialmente_nublado.png");
+}
+.page-clima-en-bolivia .weather-45{
+  background-image: url("../images/clima/iconos/tormenta_electrica.png");
+}
+.page-clima-en-bolivia .weather-46{
+  background-image: url("../images/clima/iconos/nieve.png");
+}
+.page-clima-en-bolivia .weather-47{
+  background-image: url("../images/clima/iconos/lluvia.png");
+}
+.page-clima-en-bolivia .next-days .image{
+  background-position: center top;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    margin-top: 40px;
+}
+.page-clima-en-bolivia .code-0,
+.page-clima-en-bolivia .code-1,
+.page-clima-en-bolivia .code-2{
+  background-image: url("../images/clima/vectores/parcialmente_nublado.png");
+}
+.page-clima-en-bolivia .code-3,
+.page-clima-en-bolivia .code-4{
+  background-image: url("../images/clima/vectores/tormenta_electrica.png");
+}
+.page-clima-en-bolivia .code-5{
+  background-image: url("../images/clima/vectores/lluvia.png");
+}
+.page-clima-en-bolivia .code-6,
+.page-clima-en-bolivia .code-7{
+  background-image: url("../images/clima/vectores/nieve.png");
+}
+.page-clima-en-bolivia .code-8,
+.page-clima-en-bolivia .code-9,
+.page-clima-en-bolivia .code-10,
+.page-clima-en-bolivia .code-11,
+.page-clima-en-bolivia .code-12{
+  background-image: url("../images/clima/vectores/lluvia.png");
+}
+.page-clima-en-bolivia .code-13,
+.page-clima-en-bolivia .code-14,
+.page-clima-en-bolivia .code-15,
+.page-clima-en-bolivia .code-16{
+  background-image: url("../images/clima/vectores/nieve.png");
+}
+.page-clima-en-bolivia .code-17{
+  background-image: url("../images/clima/vectores/granizo.png");
+}
+.page-clima-en-bolivia .code-18{
+  background-image: url("../images/clima/vectores/nieve.png");
+}
+.page-clima-en-bolivia .code-19{
+  background-image: url("../images/clima/vectores/polvo.png");
+}
+.page-clima-en-bolivia .code-20,
+.page-clima-en-bolivia .code-21,
+.page-clima-en-bolivia .code-22,
+.page-clima-en-bolivia .code-23{
+  background-image: url("../images/clima/vectores/neblina.png");
+}
+.page-clima-en-bolivia .code-24{
+  background-image: url("../images/clima/vectores/ventoso.png");
+}
+.page-clima-en-bolivia .code-25,
+.page-clima-en-bolivia .code-26{
+  background-image: url("../images/clima/vectores/neblina.png");
+}
+.page-clima-en-bolivia .code-27,
+.page-clima-en-bolivia .code-28,
+.page-clima-en-bolivia .code-29,
+.page-clima-en-bolivia .code-30{
+  background-image: url("../images/clima/vectores/parcialmente_nublado.png");
+}
+.page-clima-en-bolivia .code-31,
+.page-clima-en-bolivia .code-32,
+.page-clima-en-bolivia .code-33,
+.page-clima-en-bolivia .code-34{
+  background-image: url("../images/clima/vectores/despejado.png");
+}
+.page-clima-en-bolivia .code-35{
+  background-image: url("../images/clima/vectores/granizo.png");
+}
+.page-clima-en-bolivia .code-36{
+  background-image: url("../images/clima/vectores/despejado.png");
+}
+.page-clima-en-bolivia .code-37,
+.page-clima-en-bolivia .code-38,
+.page-clima-en-bolivia .code-39{
+  background-image: url("../images/clima/vectores/tormenta_electrica.png");
+}
+.page-clima-en-bolivia .code-40{
+  background-image: url("../images/clima/vectores/lluvia.png");
+}
+.page-clima-en-bolivia .code-41,
+.page-clima-en-bolivia .code-42,
+.page-clima-en-bolivia .code-43{
+  background-image: url("../images/clima/vectores/nieve.png");
+}
+.page-clima-en-bolivia .code-44{
+  background-image: url("../images/clima/vectores/parcialmente_nublado.png");
+}
+.page-clima-en-bolivia .code-45{
+  background-image: url("../images/clima/vectores/tormenta_electrica.png");
+}
+.page-clima-en-bolivia .footer{
+ background-image: url("../images/rect_azul.png");
+ padding: 5px 35px 5px 35px;
+ clear: both;
+ color: #fff;
+ overflow: hidden;
+
+ border-radius: 5px;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+}
+.page-clima-en-bolivia .footer .active{
+  background-color: #3e5479;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.page-clima-en-bolivia .footer .dep{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  overflow: hidden;
+}
+.page-clima-en-bolivia .footer .dep .item{
+  float: left;
+  width:110px;
+}
+.page-clima-en-bolivia .footer .dep .item a{
+  padding: 5px 5px 5px 5px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+
+
+/**
+* 4. Eventos
+*/
+.view-eventos{
+    padding: 15px 0px;
+    font-size: 15px;
+}
+.head-eventos{
+  background-color: #bf793b;
+}
+.head-eventos .title{
+    
+}
+
+.view-eventos.view-display-id-page .view-content{
+    background-color: #cec198;
+    overflow: hidden;
+    padding: 20px 35px;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.view-eventos img{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.view-eventos .view-display-id-block_1{
+    float: left;
+    padding-top: 0px;
+    width: 650px;
+}
+.view-eventos .view-display-id-block_2{
+  border-left: 1px solid #fff;
+  float: right;
+  padding-left: 25px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 300px;
+}
+
+.view-eventos .view-display-id-block_1 .views-field-title a{
+    font-size: 35px;
+    font-weight: bold;
+}
+.view-eventos .view-content{
+    clear: both;
+}
+.view-eventos .views-field-field-direccion{
+    background-image: url("../images/ubicacion.png");
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+.view-eventos .views-field-field-tipo-evento{
+    background-image: url("../images/tag.png");
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+.view-eventos .view-display-id-block_2 .views-field-title a{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.view-eventos .view-display-id-block_2 .views-row-first{
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.view-eventos .view-display-id-block_2 .views-field-field-direccion,
+.view-eventos .view-display-id-block_2 .views-field-field-fecha-1,
+.view-eventos .view-display-id-block_2 .views-field-field-tipo-evento,
+.view-eventos .grid-eventos .views-field-field-direccion,
+.view-eventos .grid-eventos .views-field-field-fecha-1,
+.view-eventos .grid-eventos .views-field-field-tipo-evento{
+    margin-top: 5px;
+    font-size: 12px;
+}
+.view-eventos.view-display-id-block_1 .view-content{
+    border-bottom: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    float: right;
+    width: 288px;
+}
+.view-eventos .view-header .view-content{
+    background: #fff none repeat scroll 0 0;
+    border:none;
+}
+.view-eventos table{
+    background: #fff none repeat scroll 0 0;
+    margin: 0px;
+}
+.view-eventos .grid-eventos{
+    border-top: 1px solid #fff;
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    padding: 15px 0 0;
+    vertical-align: top;
+    width: 299px;
+}
+.view-eventos .row-first .grid-eventos{
+    border:none;
+    padding-top: 0px;
+}
+.view-eventos .grid-eventos .views-field-title a{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.view-eventos .head-block{
+  background-color: #bf793b;
+}
+
+.view-eventos .view-header .views-exposed-widgets{
+  margin-bottom: 0px;
+  padding: 0px; 
+}
+.view-eventos .views-exposed-form .views-exposed-widget{
+  padding: 0px;
+}
+
+.view-eventos .views-row.views-row-1{
+  float: left;
+  margin-right: 15px;
+ }
+.view-eventos .views-row.views-row-1 .views-field-title a{
+  font-size: 35px;
+  font-weight: bold;
+  width: 650px;
+ }
+.view-eventos .views-row.views-row-2,
+.view-eventos .views-row.views-row-3{
+  float: right;
+  width: 319px;
+  border-left: 1px solid #fff;
+  margin-right: 10px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+ }
+
+.view-eventos .views-row.views-row-2 .views-field-field-tipo-evento{
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+.view-eventos .views-row.views-row-4,
+.view-eventos .views-row.views-row-5,
+.view-eventos .views-row.views-row-6{
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  padding: 15px 0 0;
+  vertical-align: top;
+  width: 300px;
+  border-top: 1px solid #fff;
+}
+.view-eventos .views-row.views-row-4{
+  clear: both;
+}
+.view-eventos .views-row.views-row-2 .views-field-title a,
+.view-eventos .views-row.views-row-3 .views-field-title a,
+.view-eventos .views-row.views-row-4 .views-field-title a,
+.view-eventos .views-row.views-row-5 .views-field-title a,
+.view-eventos .views-row.views-row-6 .views-field-title a
+{
+  font-size: 20px;
+  font-weight: bold;
+ }
+.view-eventos .views-row.views-row-2 .views-field-field-fecha-1,
+.view-eventos .views-row.views-row-3 .views-field-field-fecha-1,
+.view-eventos .views-row.views-row-4 .views-field-field-fecha-1
+.view-eventos .views-row.views-row-5 .views-field-field-fecha-1,
+.view-eventos .views-row.views-row-6 .views-field-field-fecha-1,
+.view-eventos .views-row.views-row-2  .views-field-field-direccion,
+.view-eventos .views-row.views-row-3  .views-field-field-direccion,
+.view-eventos .views-row.views-row-4  .views-field-field-direccion,
+.view-eventos .views-row.views-row-5  .views-field-field-direccion,
+.view-eventos .views-row.views-row-6  .views-field-field-direccion{
+  font-size: 12px;
+}
+.content-main-block-view {
+    background: #B4EF11 none repeat scroll 0 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.view-display-id-page .views-row.views-row-1.views-row-odd.views-row-first {
+    height: 637px;
+}
+.view-display-id-page.view-display-id-page .views-row.views-rows-4-5 {
+    border-top: 1px solid #fff;
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+.view-eventos .views-row.views-row-4, .view-eventos .views-row.views-row-5 {
+    border-top: none !important;
+    margin-top: 0 !important;
+}
+.view-eventos .views-row.views-row-4, .view-eventos .views-row.views-row-5, .view-eventos .views-row.views-row-6 {
+    width: 319px !important;
+}
+.view-display-id-page.view-display-id-page .views-row.views-row-6.views-row-even {
+    float: right !important;
+    margin-right: 10px;
+    margin-top: 16px !important;
+}
+.view-display-id-page.view-display-id-page .views-row.views-row-5.views-row-odd {
+    margin-left: 30px;
+    margin-right: 0 !important;
+}
+.view-display-id-page.view-display-id-page .views-row.views-row-4.views-row-even {
+    margin-left: 0 !important;
+}
+.view-eventos .views-row.views-row-7{
+    clear: both;
+}
+.view-eventos .views-row.views-row-7, .view-eventos .views-row.views-row-10, .view-eventos .views-row.views-row-8, .view-eventos .views-row.views-row-11, .view-eventos .views-row.views-row-9, .view-eventos .views-row.views-row-12 {
+    border-top: 1px solid #fff;
+    float: left;
+    margin-top: 15px;
+    padding: 15px 0 0;
+    vertical-align: top;
+    width: 319px;
+}
+.view-eventos .views-row.views-row-7, .view-eventos .views-row.views-row-10 {
+    clear: both;
+    margin-left: 10px;
+    margin-right: 44px;
+}
+.view-eventos .views-row.views-row-8, .view-eventos .views-row.views-row-11 {
+    margin-left:0px;
+    margin-right: 44px;
+}
+.view-eventos .views-row.views-row-9, .view-eventos .views-row.views-row-12 {
+    margin-left:0px;
+    margin-right: 0px;
+}
+/* select auto widht */
+#width_tmp {
+    display: none;
+}
+
+
+
+/**
+*  4.1 Eventos Node
+*/
+.node-evento{
+  background-color: #CEC198;
+  border-radius: 10px;
+  padding: 20px 25px;
+  overflow: hidden;
+}
+.node-evento .info-desc{
+  border-right: 1px solid #fff;
+  float: left;
+  padding-right: 20px;
+  width: 630px;
+}
+.node-evento .info-event{
+  float: right;
+  width: 360px;
+}
+.node-type-evento #page-title{
+    text-align: left;
+    font-size: 4.6em;
+    line-height: 48px;
+}
+.node-evento .submitted{
+    background: url("../images/person.png") no-repeat scroll 0 6px transparent;
+    color: #333;
+    font-size: 15px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-top: 5px;
+}
+.node-evento .author-datetime{
+    margin-bottom: 0;
+
+}
+.node-evento .field-name-field-fecha{
+   background: url("../images/fecha_evento.png") no-repeat scroll 0 6px transparent;
+    color: #333;
+    font-size: 15px;
+    padding: 5px 0 5px 25px;
+}
+.node-evento .field-name-field-direccion{
+    background: url("../images/ubicacion.png") no-repeat scroll 0 7px transparent;
+    color: #333;
+    font-size: 15px;
+    padding: 5px 0 5px 25px;
+}
+.node-evento .field-name-field-tipo-evento{
+  background-image: url("../images/tag.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 5px 0 5px 25px;
+  color: #333;
+  font-size: 15px;
+}
+.node-evento .field-name-field-tipo-evento ul{
+  margin: 0px;
+  list-style: none;
+  padding: 0px;
+}
+.node-evento .field-name-field-ubicacion{
+  margin-bottom: 15px;
+}
+
+.node-evento .field-name-body{
+    font-size: 15px;
+    clear: right;
+}
+.node-evento .field-name-field-image img{
+  border: 1px solid #ccc;
+}
+.node-evento nav.clearfix{
+  clear: both;
+}
+.node-type-evento #page-title{
+  line-height: 1.0em;
+  padding-bottom: 10px;
+}
+.node-evento h1{
+  text-align: left;
+  line-height: 1.2em;
+}
+
+
+/**
+* 4.2 Eventos block
+*/
+#block-views-eventos-block-1 .block-inner.clearfix {
+    display: inline-block;
+    height: auto;
+    width: 300px;
+}
+#block-views-eventos-block-1 .block-title {
+    background: #246a42 none repeat scroll 0 0;
+    color: white;
+    font-family: inherit;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+#block-views-eventos-block-1 .block-content.content {
+    border-right: 1px solid #ededed;
+    width: 299px;
+}
+#block-views-eventos-block-1 .view.view-eventos.view-id-eventos.view-display-id-block_1.view-dom-id-35f5ebc98f095dea0242ff020c7f2ac2 {
+    margin: 0;
+    padding: 0;
+}
+#block-views-eventos-block-1 tr {
+    border-bottom: 1px solid #ededed;
+}
+#block-views-eventos-block-1 .views-field.views-field-field-image, 
+#block-views-eventos-block-1 .views-field.views-field-title, 
+#block-views-eventos-block-1 .views-field.views-field-field-fecha-1, 
+#block-views-eventos-block-1 .views-field.views-field-field-direccion, 
+#block-views-eventos-block-1 .views-field.views-field-field-tipo-evento {
+    display: inline-block;
+}
+/* #block-views-eventos-block-1 .views-field.views-field-title { */
+/*     left: 0; */
+/*     padding: 0 10px; */
+/*     position: absolute; */
+/*     text-align: center; */
+/*     top: 122px; */
+/*     width: 270px; */
+/*     z-index: 1; */
+/* } */
+
+/* .views-field.views-field-field-fecha-1, .views-field.views-field-field-direccion, .views-field.views-field-field-tipo-evento { */
+/*     margin: 0 10px; */
+/*     width: 245px; */
+/* } */
+.view-eventos .image-style-none {
+    height: 160px;
+    width: 290px;
+}
+.view-eventos td {
+    margin: 0;
+    padding: 0;
+}
+.view-eventos td {
+    position: relative;
+    padding: 10px 0;
+}
+
+.views-field.views-field-nothing {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%) repeat scroll 0 0;
+    color: transparent;
+    height: 161px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+.view-eventos img {
+    border-radius: 0 !important;
+}
+.view-eventos {
+    font-size: 15px;
+    padding: 0 !important;
+}
+.view-eventos.view-display-id-block_1 .field-content > a {
+    color: #003265;
+    font-size: 20px;
+    text-decoration: none;
+}
+.view-eventos.view-display-id-block_1 .views-field.views-field-field-fecha-1 {
+    color: #a8aeb3;
+    display: inline-block !important;
+    float: right;
+    height: 100%;
+    margin-right: 10px;
+}
+.view-eventos.view-display-id-block_1 .views-field.views-field-field-image {
+    padding: 0 10px;
+}
+.view-eventos.view-display-id-block_1 .views-field.views-field-title {
+    margin-left: 10px;
+}
+.view-eventos.view-display-id-block_1 .view-footer {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #ededed;
+    display: inline-block;
+    float: right;
+    height: auto;
+    padding: 10px 5px;
+    text-align: center;
+    width: 280px;
+}
+
+.view-eventos.view-display-id-block_1 .button-ver-mas {
+    background: #246a42 none repeat scroll 0 0;
+    border-radius: 20px;
+    color: #fff;
+    padding: 4px 37px;
+    text-decoration: none;
+}
+.view-eventos.view-display-id-block_1 .row-2 .views-field.views-field-field-image, .view-display-id-block_1 .row-3 .views-field.views-field-field-image, .view-display-id-block_1 .row-4 .views-field.views-field-field-image, .view-display-id-block_1 .row-5 .views-field.views-field-field-image {
+    display: none !important;
+}
+#block-views-eventos-block-1 .block-content.content {
+    border-right: none !important;
+}
+
+.view-eventos.view-display-id-block_1 .content-main-block-view {
+    border-right: 1px solid #ededed !important;
+    width: 299px !important;
+}
+.view-eventos.view-display-id-block_1 .view-content {
+    border-left: medium none !important;
+    float: right;
+    width: 290px !important;
+}
+.view-eventos.view-display-id-block_1 .field-content > a {
+    font-size: 17px !important;
+}
+.view-eventos.view-display-id-block_1 .views-field.views-field-title {
+    margin-right: 10px !important;
+    width: 270px;
+}
+#block-views-eventos-block-1 tr {
+    border-bottom: 3px solid #ededed !important;
+}
+.view-eventos.view-display-id-block_1 .view-content {
+    border-bottom: medium none !important;
+}
+
+
+
+/**
+* 5. Lugares
+*/
+
+/*Lista lugares*/
+.poster-lugares {
+    display: block;
+    height: auto;
+    width: auto;
+}
+.poster-lugares_imagen{
+    margin-right: 10px;
+    float: left;
+    font-family: arial;
+    font-size: 12px;
+    background: #f8f8f8;
+}
+.poster-lugares_title a{
+    color: #333;
+    font-size: 25px;
+    margin-top: 28px;
+    letter-spacing: -1px;
+}
+.poster-lugares_taxo-title a{
+    background: #006633;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+    float: left;
+    color: #fff;
+    text-transform: uppercase;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.poster-lugares_taxo-title a:hover{
+    background: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+    float: left;
+    color: #006633;
+    border: solid 1px #006633;
+    text-transform: uppercase;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.poster-lugares_description{
+    font-size: 15px;
+    color: #000;
+}
+.poster-lugares_head-date{
+    color: #8e9390;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 40px;
+    padding-bottom: 3px;
+    font-weight: 500;
+    background: transparent url(../images/calendario.png) no-repeat scroll 0 0px;
+}
+.poster-lugares_head-ubica-text{
+    color: #8e9390;
+    font-size: 14px;
+    padding-top: 5px;
+    font-weight: 500;
+    padding-left: 40px;
+    padding-bottom: 3px;
+    background: transparent url(../images/ubicacion.png) no-repeat scroll 0 0px;
+}
+/*
+* BLoque informacion del lugar
+*/
+.info-lugares{
+    width: 100%;
+    padding: 2px 2px 2px 2px;
+}
+.info-lugares_taxo{
+    text-align: center;
+    margin: 0 auto;
+    padding-right: 5px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+}
+.info-lugares_taxo_img{
+    float: left;
+    padding-left: -10px;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    text-align:left;
+}
+.info-lugares_taxo-title a{
+    background: #006633;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    float: left;
+    color: #fff;
+    text-transform: uppercase;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.info-lugares_taxo-title a:hover{
+    background: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    float: left;
+    color: #006633;
+    border: solid 1px #006633;
+    text-transform: uppercase;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.info-lugares_head{
+    clear: both;
+    border-right: solid 1px #eee;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+}
+.info-lugares_head-date{
+    color: #8e9390;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 35px;
+    padding-bottom: 3px;
+    font-weight: 500;
+    background: transparent url(../images/calendario.png) no-repeat scroll 0 0px;
+}
+.info-lugares_head-ubica-text{
+    color: #8e9390;
+    font-size: 14px;
+    padding-top: 5px;
+    font-weight: 500;
+    padding-left: 35px;
+    padding-bottom: 3px;
+    background: transparent url(../images/ubicacion.png) no-repeat scroll 0 0px;
+}
+/*
+*  5.1 Lugares Node
+*/
+.node-lugares .author-datetime{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.node-lugares .field-name-field-horario-atencion{
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    float: left;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-right: 60px;
+    padding-bottom: 15px;
+    background: transparent url(../images/calendario.png) no-repeat scroll 0 0px;
+    clear: left;
+}
+.node-lugares .field-name-field-direccion{
+    color: #333;
+    font-size: 15px;
+    float: right;
+    font-weight: 700;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-right: 60px;
+    padding-bottom: 15px;
+    background: transparent url(../images/ubicacion.png) no-repeat scroll 0 0px;
+    clear: right;
+}
+.node-lugares .field-name-field-image{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.node-lugares .field-name-body{
+    padding-top: 10px;
+    font-size: 15px;
+    clear: right;
+}
+.node-lugares .field-name-field-image img{
+  border: 1px solid #ccc;
+}
+.node-lugares nav.clearfix{
+  clear: both;
+}
+.node-type-lugares #page-title{
+  line-height: 1.0em;
+  padding-bottom: 10px;
+}
+
+
+/**
+* 6. JUEGOS
+*/
+.juegos-block{
+    float: left;
+    width: 160px;
+    margin: 0 auto;
+    text-align: center; vertical-align: middle;
+    margin-right: 4px;
+}
+.juegos-block_title a{
+    font-size: 15px; color: #eee;
+    padding: 10px 2px 5px 4px;
+}
+.juegos-block_image{
+    float: left;
+}
+#block-system-main .view-juegos{
+    background-image: url("../images/multimedia-grey.png");
+    padding: 10px;
+}
+#block-system-main .view-juegos table .tr.info, tr.even, tr:nth-child(2n+2){
+    background-color: transparent;
+}
+#block-system-main .view-juegos table td{
+    position: relative;
+    text-align: center;
+    padding-bottom: 15px;
+}
+#block-system-main .view-juegos table td .views-field-name{
+    position: absolute;
+    top: 12px;
+    left: 43%;
+}
+#block-system-main .view-juegos table td .views-field-name a{
+    background-color: #3ABED4;
+    padding: 5px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#block-system-main .view-juegos table td .views-field-title a{
+    color: #fff;
+    font-family: "Flama-Bold";
+    font-size: 1.6em;
+    text-decoration: none;
+    line-height: 18px;
+}
+#block-system-main .view-juegos table td .views-field-title a:hover{
+    color: gray;
+}
+
+/**
+* 7. HOROSCOPO
+*/
+
+.view-horoscopo .view-header .head{
+  background-color: #c9b400;
+}
+
+.view-horoscopo .views-view-grid{
+  background-color: #e5e1d6;
+  margin: 0px;
+  -moz-border-radius: 7px 7px 7px 7px; /* Firefox */
+  -webkit-border-radius: 7px 7px 7px 7px; /* Google Chrome y Safari */
+  border-radius: 7px 7px 7px 7px; /* CSS3 (Opera 10.5 e Internet Explorer 9) */
+}
+.view-horoscopo .col-1,.view-horoscopo .col-2, .view-horoscopo .col-3{
+  width: 360px;
+}
+.horoscopo .views-field-field-image{
+  float: left;
+  vertical-align: top;
+  width: 150px;
+  height: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 50px;
+  padding-top: 10px;
+}
+.horoscopo .views-field-title{
+  font-size: 20px;
+  padding-top: 10px;
+  color: #23787f;
+  font-weight: bold;
+  float: left;
+}
+.horoscopo .views-field-body{
+  font-size: 15px;
+  color: #59554c;
+  float: left;
+  width: 175px;
+}
+.view-display-id-horoscopo .view-content {
+    background: none repeat scroll 0 0 #e5e1d6;
+    border-radius: 7px;
+}
+.view-display-id-horoscopo .view-content p {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/**
+* 8. CALENDARIO FERIADOS
+*/
+.calendar-calendar th.days {
+    background-color: #e9e5e2;
+    color: #686461;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-top: 12px; padding-bottom: 8px;
+}
+.calendar-calendar .month-view .full td.date-box.empty {
+    background: #d9cfc5;
+}
+.calendar-calendar td.empty{
+  font-size: 20px;
+  color: #746c6a;
+}
+.calendar-calendar .month-view .full td.single-day.empty{
+  color: #746c6a;
+}
+.calendar-calendar .month-view .full tr.single-day .no-entry{
+  background-color: #e9e5e2;
+}
+.calendar-calendar .month-view .full td.date-box{
+  background-color: #e9e5e2;
+  font-size: 20px;
+}
+.cal-feriados-card_date {
+    background: transparent url(../images/calendario-feriados.png) no-repeat scroll 0 1px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    display: table;
+    line-height: 0;
+    width: 100px;
+    height: 100px;
+}
+.cal-feriados-card_date-mes{
+    color: #333;
+    font-size: 15px;
+    padding-top: 40px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 600;
+}
+.cal-feriados-card_date-dia{
+    color: #333;
+    float: left;
+    font-size: 15px;
+    padding-right: 10px;
+}
+.cal-feriados-card_description{
+    border-left: 1px solid #ccc;
+    margin-left: 30px;
+    padding-left: 10px;
+}
+.cal-feriados-card_title{
+    font-size: 15px;
+    color:#333;
+}
+.cal-feriados-card_body{
+    font-size: 15px;
+    color:#000;
+}
+.view .date-nav-wrapper .date-prev{
+    padding-right: 10px;
+}
+.view .date-nav-wrapper .date-next{
+    padding-left: 10px;
+}
+.calendar-calendar .month-view .full td.date-box.today,
+.calendar-calendar .month-view .full tr td.single-day.today{
+    border-color:#f47c01;
+}
+.view-calendario-de-feriados .date-nav-wrapper .date-heading h3{
+  background-color: #ff7f00;
+  color: #fff;
+  font-size: 16px;
+}
+.view-calendario-de-feriados .view-item-calendario_de_feriados .views-field.views-field-title{
+  background-color: #ff7f00;
+  color: #fff;
+  font-size: 12px;
+  font-family: "Helvetica-mac-light";
+}
+
+.calendar-calendar .month-view .full td.multi-day .inner .monthview .continues,
+.calendar-calendar .month-view .full td.multi-day .inner .monthview .cutoff,
+.calendar-calendar .week-view .full td.multi-day .inner .weekview .continues,
+.calendar-calendar .week-view .full td.multi-day .inner .weekview .cutoff,
+.calendar-calendar .month-view .full td.single-day div.monthview,
+.calendar-calendar .week-view .full td.single-day div.weekview,
+.calendar-calendar .day-view .full td.single-day div.dayview{
+    background-color: #f47c01; padding: 10px;
+}
+.calendar-calendar .month-view .full td.multi-day div.monthview,
+.calendar-calendar .week-view .full td.multi-day div.weekview,
+.calendar-calendar .day-view .full td.multi-day div.dayview{
+    background-color: #f47c01;
+}
+.calendar-calendar .month-view .full td.multi-day div.monthview a,
+.calendar-calendar .week-view .full td.multi-day div.weekview a,
+.calendar-calendar .day-view .full td.multi-day div.dayview a,
+.calendar-calendar .month-view .full td.single-day div.monthview a,
+.calendar-calendar .week-view .full td.single-day div.weekview a,
+.calendar-calendar .day-view .full td.single-day div.dayview a{
+    color: #fff;
+    font-size: 12px;
+    font-family: "Helvetica-mac-light";
+}
+.view-calendario-de-feriados .view-content{
+    background-color: #d5cdc2;
+    clear: both;
+    overflow: hidden;
+}
+
+.view-calendario-de-feriados .view-header{
+  background-color: #ff7f00;
+}
+.view-calendario-de-feriados .view-header .head{
+  float: left;  
+  text-align: center;
+  font-size: 30px;
+  width: 70%;
+}
+.view-calendario-de-feriados .view-header .view-filters{
+  width: 130px;
+}
+.view-calendario-de-feriados .view-header .views-exposed-widgets{
+  margin-bottom: 0px;
+  padding: 0 0 0 0; 
+}
+table.claendariopage1{
+  table-layout:fixed;
+}
+tr.tr-claendariopage1{
+  background-color: #d5cdc2; 
+}
+td.td-claendariopage1{
+  width: 346px; float: left; height: auto;
+}
+
+.view-calendario-de-feriados .item-list h3{
+  color: #ff7f00;
+  background-color: #d5cdc2;
+  padding: 5px 5px 5px 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  }
+.view-calendario-de-feriados .item-list ul {
+  list-style: none;
+}
+.view-calendario-de-feriados .item-list li.Feriado,
+.view-calendario-de-feriados .item-list li.Festivo{
+  padding-left: 3px; padding-right: 3px;
+  overflow: hidden;
+}
+.titulo-feriado-festivo .year-current, .titulo-feriado-festivo .year-more-one, .titulo-feriado-festivo .year-more-two {
+    float: left;
+    width: 33.3%;
+}
+.view-footer .titulo-feriado-festivo {
+  display: inline-block;
+  width: 100%;
+}
+.view-calendario-de-feriados .item-list li.Festivo .views-field.views-field-field-fecha-feriado-1{
+  text-align: right; 
+  color: #3c3c3b; 
+  font-size: 15px; 
+  font-weight: bold;
+  border-right: 2px #a77525 solid;
+  padding: 5px 10px 5px 10px; 
+  width: 62px;
+  float: left;
+}
+.view-calendario-de-feriados .item-list li.Feriado .views-field.views-field-field-fecha-feriado-1 {
+    border-right: 2px solid #967e5c;
+    color: #872c04;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: right;
+    width: 62px;
+}
+.view-calendario-de-feriados .item-list li.Feriado .views-field.views-field-title{
+  text-align: left; 
+  color: #872c04; 
+  font-size: 14px;
+  padding: 5px 10px 15px 54px;
+}
+.view-calendario-de-feriados .item-list li.Festivo .views-field.views-field-title{
+  text-align: left; 
+  color: #3c3c3b; 
+  font-size: 14px;
+  padding: 5px 10px 15px 54px;
+}
+.view-calendario-de-feriados .views-exposed-form .views-exposed-widget{
+  padding: 0px;
+}
+.view-calendario-de-feriados select option{
+  color: #333;
+  background-color: #fff;
+  padding: 5px 0px;
+}
+.year-current > a, .year-more-one > a, .year-more-two > a {
+    padding: 5% 46%;
+    text-decoration: none;
+}
+.view-calendario-de-feriados .view-footer .leyenda{
+    background-color: #ff7f00;
+    color: #fff;
+    font-family: "Helvetica-mac-light";
+    font-size: 14px;
+    margin-top: 7px;
+    overflow: hidden;
+    padding: 15px 35px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.view-calendario-de-feriados .leyenda-footer{
+  padding: 10px 35px 10px 35px;
+  color: #fff;  
+  margin-bottom: 20px;
+  font-size: 14px;
+  margin-top: 7px;
+  text-transform: uppercase;
+  font-weight: bold;
+  overflow: hidden;
+  background-color: #ebe7e4;
+  font-family: "Helvetica-mac-light";
+  -moz-border-radius: 7px 7px 7px 7px; /* Firefox */
+  -webkit-border-radius: 7px 7px 7px 7px; /* Google Chrome y Safari */
+  border-radius: 7px 7px 7px 7px; /* CSS3 (Opera 10.5 e Internet Explorer 9) */
+}
+
+.view-calendario-de-feriados .leyenda-footer .lferiado{
+  color: #872c04; 
+  float: left; 
+  text-align: right;
+  width: 49%;
+}
+.view-calendario-de-feriados .leyenda-footer .lfestivo{
+  color: #3c3c3b;
+  float: right; 
+  text-align: left;
+  width: 49%;
+}
+.view-calendario-de-feriados .titulo-feriado-festivo .date-display-single {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.view-calendario-de-feriados .view-display-id-block_1 .date-nav-wrapper .date-prev {
+    -moz-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+    /*background-image: url("../images/izq.png");*/
+    color: #fff;
+    float: none;
+    padding: 5px 0;
+    position: absolute;
+    right: 60px;
+    left: auto;
+    text-align: right;
+    top: 12px;
+    width: auto;
+    z-index: 1;
+    font-size: 12px;
+}
+.view-calendario-de-feriados .view-display-id-block_1 .date-nav-wrapper .date-next {
+    -moz-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;
+    /*background-image: url("../images/der.png");*/
+    color: #fff;
+    float: none;
+    padding: 5px 0;
+    position: absolute;
+    right: 0px;
+    text-align: right;
+    top: 12px;
+    width: auto;
+    z-index: 1;
+    font-size: 12px;
+}
+.view-calendario-de-feriados .view-display-id-block_1 .date-nav-wrapper .date-heading {
+    position: relative;
+    width: 100%;
+    top: 12px;
+    text-align: center;
+    z-index: 0;
+}
+
+
+/**
+* 9. HORARIO DE VUELOS
+*/
+.page-node-32 .field-name-body{
+    background-image: url("../images/multimedia-grey.png");
+    padding: 15px 10px;
+}
+.page-node-32 .field-name-body .credit-sabsa .source{
+    color: #fff;
+    font-size: 15px;
+    padding-top: 30px;
+    float: left;
+    padding-right: 10px;
+}
+
+.page-horarios-de-vuelo #content-column {
+    background: #fff;
+    background-position: center bottom;
+    margin-bottom: 10px;
+}
+.page-horarios-de-vuelo .block-blue {
+  background-color: #379598;
+}
+.page-horarios-de-vuelo .content-iframe-horarios {
+    background: #C5DDD2 none repeat scroll 0 0;
+    border-radius: 5px;
+    opacity: 0.85;
+    padding: 30px;
+}
+.page-horarios-de-vuelo .content-iframe-horarios > iframe {
+    background: #379598 none repeat scroll 0 0 !important;
+}
+.content-main-horarios{
+    background-image: url("../images/summer.png");
+    border-radius: 5px;
+}
+
+.head-block .aeropuerto-content{
+  width: 200px;
+}
+
+.head-block .aeropuerto-content #aeropuerto{
+  width: 215px;
+}
+
+
+/**
+* 10. RSS
+*/
+.rss-eldeber{
+    font-size: 23px;
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-top: 2px;
+    width: 305px;
+}
+.rss-eldeber a{
+    display: block;
+    float: right;
+}
+.rss-diez{
+    color: #ea8d00;
+    font-size: 25px;
+    font-weight: 700;
+    padding-left: 35px;
+    padding-top: 2px;
+    padding-bottom: 15px;
+    background: transparent url(../images/diez.png) no-repeat scroll 0 0px;
+}
+.rss-sociales{
+    color: #ea005e;
+    font-size: 25px;
+    font-weight: 700;
+    padding-left: 35px;
+    padding-top: 2px;
+    padding-bottom: 15px;
+    background: transparent url(../images/sociales.png) no-repeat scroll 0 0px;
+}
+.content-ed{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid #333;
+}
+.content-diez{
+    border:1px solid #ea8d00;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.content-sociales{
+    border:1px solid #ea005e;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+  .cnl-rss{
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-right: 20px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+.cnl-rss_link a{
+    background: transparent url(../images/cnl-rss.png) no-repeat scroll 0 0px;
+    max-width: 150px; min-width: 150px;
+    color: #333; padding-left: 30px;
+    padding-top: 2px;padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.cnl-rss_link_serv{
+   float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+/**
+ * 11. Cotizaciones
+ */
+.view-cotizaciones .title-quotes-page{
+  background-color: #0fc2c4;
+}
+.view-cotizaciones .date-current {
+    background: none repeat scroll 0 0 #D6D6D6;
+    margin: 12px 0;
+    padding: 20px 35px;
+    text-align: right;
+}
+.view-cotizaciones .other-quotes {
+    background: none repeat scroll 0 0 #D6D6D6;
+    float: left;
+    width: 65%;
+    margin: 0;
+}
+.view-cotizaciones .view-content .dolar {
+    color: #fff;
+    float: left;
+    height: 240px;
+    width: 35%;
+}
+.view-cotizaciones .dolar-buy{
+    background: #0fc2c4 none repeat scroll 0 0;
+    display: flex;
+    margin: 0 12px 12px 0;
+    padding: 14px 50px;
+}
+.view-cotizaciones .dolar-sale {
+    background: none repeat scroll 0 0 #0fc2c4;
+    margin: 0px 12px 0px 0px;
+    padding: 13px 50px;
+    display:flex;
+}
+.view-cotizaciones .europa-quotes {
+    float: left;
+    padding-left: 15px;
+    width: 335px;
+}
+.view-cotizaciones .america-quotes {
+    float: left;
+    padding-right: 15px;
+    width: 335px;
+}
+
+.view-cotizaciones .field-content, .view-cotizaciones .date-current {
+    font-size: 20px;
+}
+.view-cotizaciones .date-current, .view-cotizaciones .dolar-buy, .view-cotizaciones .dolar-sale, .view-cotizaciones .other-quotes {
+    border-radius: 5px;
+}
+.view-cotizaciones .views-label {
+    font-size: 18px;
+}
+
+.view-cotizaciones .img-dolar {
+    background-image: url("../images/dolar.png");
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    height: 78px;
+    width: 50%;
+}
+.dolar .field-content {
+    font-size: 40px;
+}
+.view-cotizaciones .data-quotes {
+    float: right;
+    padding: 5px 25px 0 0;
+    width:50%;
+    text-align: center;
+}
+.view-cotizaciones .other-quotes .views-label{
+  font-size: 14px;
+}
+.view-cotizaciones .img-dolar {
+    background-image: url("../images/dolar.png");
+}
+.view-cotizaciones .img-euro {
+    background-image: url("../images/euro.png");
+}
+.view-cotizaciones .img-yen {
+    background-image: url("../images/yen.png");
+}
+.view-cotizaciones .img-ufv {
+    background-image: url("../images/ufv.png");
+}
+.view-cotizaciones .img-libra {
+    background-image: url("../images/libra.png");
+}
+.view-cotizaciones .img-peso-argentino {
+    background-image: url("../images/pesos.png");
+}
+.view-cotizaciones .img-peso-chileno {
+    background-image: url("../images/pesos.png");
+}
+.view-cotizaciones .img-real-brasil {
+    background-image: url("../images/reales.png");
+}
+.view-cotizaciones .img-sol-peru {
+    background-image: url("../images/soles.png");
+}
+.view-cotizaciones .img-euro, .view-cotizaciones .img-yen, .view-cotizaciones .img-libra, .view-cotizaciones .img-peso-argentino, .view-cotizaciones .img-peso-chileno {
+    background-position: 70px 25px;
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 50%;
+}
+
+.view-cotizaciones .dolar .img-dolar {
+    background-position: 12px 36px;
+    background-repeat: no-repeat;
+    height: 78px;
+    width: 50%;
+}
+.view-cotizaciones .dolar .img-dolar {
+    width: 50%;
+}
+.view-cotizaciones .quote-euro, .view-cotizaciones .quote-yen-japon, .view-cotizaciones .quote-ufv, .view-cotizaciones .quote-libra, .view-cotizaciones .quote-peso-argentino, .view-cotizaciones .quote-peso-chileno, .view-cotizaciones .quote-real-brasil, .view-cotizaciones .quote-sol-peru {
+    display: flex;
+}
+.view-cotizaciones .dolar .data-quotes {
+    width:50%;
+}
+.quote-euro, .quote-peso-argentino, .quote-ufv, .quote-real-brasil, .quote-yen-japon, .quote-peso-chileno {
+    border-bottom: 1px solid #6D6D6D;
+}
+.europa-quotes {
+    border-right: 1px solid #6D6D6D;
+}
+.view-cotizaciones .other-quotes {
+    margin-bottom: 12px;
+    padding: 5px 0px;
+}
+.view-cotizaciones .img-ufv {
+    background-position: 59px 25px;
+    background-size: 27% auto;
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 50%;
+}
+.view-cotizaciones .img-real-brasil {
+    background-position: 62px 25px;
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 50%;
+}
+.view-cotizaciones .img-sol-peru {
+    background-position: 62px 25px;
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 50%;
+}
+.view-cotizaciones .other-quotes .data-quotes {
+    color: #18171f;
+    padding: 5px 50px 0 0;
+
+}
+.view-cotizaciones .img-euro, .view-cotizaciones .img-yen, .view-cotizaciones .img-libra, .view-cotizaciones .img-peso-argentino, .view-cotizaciones .img-peso-chileno {
+     background-size: 10% auto;
+}
+.view-cotizaciones .img-real-brasil, .view-cotizaciones .img-sol-peru {
+     background-size: 20% auto;
+}
+.view-cotizaciones .content{
+  overflow: hidden;
+}
+
+/**
+ * 12. Modal form styles
+ */
+#modal-title{
+  display: none;
+}
+#modal-content form{
+  background-color: #C8DDD2;
+  padding: 10px 15px;
+  margin: 0 auto;
+  width: 500px;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#modal-content form .form-text{
+  border:none;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 95%;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+#modal-content form .form-submit{
+  background-color: #166940;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  min-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+#modal-content .hybridauth-widget {
+    margin: 0 auto;
+    width: 25%;
+}
+
+#modal-content form label,
+#model-content form .description,{
+  display: none !important;
+}
+#modal-content form .recovery-link,
+#modal-content form .create-user-link a{
+  text-decoration: underline;
+}
+#modal-content form .login-face{
+  background-color: #3B5998;
+  display: block;
+  padding: 5px;
+  width: 100%;
+  color: #fff;
+  margin: 10px 0px;
+  overflow: hidden;
+  text-decoration: none;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#modal-content form .login-face .txt{
+  padding-top: 5px;
+  display: block;
+}
+#modal-content form .login-face .fa-facebook{
+  background-image: url("images/face_logo.png");
+  background-repeat: no-repeat;
+  width: 13px;
+  display: block;
+  height: 25px;
+  float: left;
+  margin-right: 10px;
+}
+#branding .user-menu.floatRight {
+    display: inline-block;
+    float: right;
+    margin-top: 9px;
+}
+#user-login label,
+#user-register-form label,
+#user-login .description,
+#user-register-form .description {
+  display: none;
+}
+
+
+/**
+* 13. Mapas
+*/
+.head-mapas{
+  background-color: #D5544E;
+}
+.head-mapas .content-tipo-mapa{
+  width: 225px;
+}
+.head-mapas .content-tipo-mapa select{
+  width: 240px;
+}
+#block-views-tipo-empresa-block{
+  margin-bottom: 0px;
+}
+.lista-mapas-iconos{
+    background: #f3f1e4 none repeat scroll 0 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+}
+.lista-mapas-iconos a{
+    background-image: url("../images/iconos_mapas.png");
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 55px;
+    margin: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 60px;
+    vertical-align: top;
+    text-decoration: none;
+    width: 120px;
+}
+.lista-mapas-iconos .farmacias{background-position: -235px 5px}
+.lista-mapas-iconos .cajeros{background-position: -355px 5px}
+.lista-mapas-iconos .agencias{background-position: -715px 5px}
+.lista-mapas-iconos .supermercados{background-position: -115px 5px}
+.lista-mapas-iconos .gasolineras{background-position: 5px 5px}
+.lista-mapas-iconos .hospitales{background-position: -475px 5px}
+
+.view-sucursales .view-header{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+/**
+* 13.1 Block mapas
+*/
+
+.list-elements-map {
+    background: none repeat scroll 0 0 #f7f7f7;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    font-size: 17px;
+    list-style: outside none none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.content-map .title-map {
+   background: none repeat scroll 0 0 #246a42;
+   border: 2px solid #246a42;
+}
+.content-map .content-list-elements-map {
+    background: #b4ef11 none repeat scroll 0 0;
+    color: #717071;
+    padding-left: 10px;
+}
+.content-map .content-list-elements-map .list-elements-map li {
+    background-position: 230px center;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    border-bottom: 1px solid #ededed;
+    padding: 12px;
+}
+.content-map .title-map .content-title {
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+.content-map .content-list-elements-map {
+    background: #b4ef11 none repeat scroll 0 0;
+}
+.element-gasolinera {
+    background-image: url("../images/gasolinera.png");
+}
+.element-supermercado {
+    background-image: url("../images/mercado.png");
+}
+.element-farmacias {
+    background-image: url("../images/farmacia.png");
+}
+.element-atms {
+    background-image: url("../images/atms.png");
+}
+.element-sucursales-bancarias {
+    background-image: url("../images/bancos.png");
+}
+.element-hospitales {
+    background-image: url("../images/hospitales.png");
+}
+.element-servicios-municipales {
+    background-image: url("../images/servicios_municipales.png");
+}
+.element-parqueos {
+    background-image: url("../images/parqueos.png");
+}
+.list-elements-map a {
+    color: #717071;
+    text-decoration: none;
+}
+.list-elements-map li:hover {
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+
+/**
+* 13.2 Atachmment Mapas Sucursales
+*/
+.view-sucursales .view-display-id-attachment_1 td{
+  text-align: center;
+}
+.view-sucursales .view-display-id-attachment_1 td a{
+  font-size: 20px;
+}
+.view-sucursales .view-display-id-attachment_1 td a.active{
+  color: #D5544E;
+  font-weight: bold;
+}
+
+/**
+* 14. Newsletter page
+*/
+.content-main-newsletter .title {
+    background: #a5cc00 none repeat scroll 0 0;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    padding: 20px 0;
+    text-align: center;
+}
+.body-newsletter .logo-ed {
+    background: #014b18 none repeat scroll 0 0;
+}
+.body-newsletter .logo-sociales {
+    background: #c9105e none repeat scroll 0 0;
+}
+.body-newsletter .logo-diez {
+    background: #449b18 none repeat scroll 0 0;
+}
+.body-newsletter {
+    background: #ebefca none repeat scroll 0 0;
+    border-radius: 5px;
+}
+.body-newsletter .block-form {
+    float: left;
+    height: 768px;
+    text-align: center;
+    width: 60%;
+}
+.body-newsletter .block-image {
+    float: left;
+    margin: 70px 0 20px;
+    width: 40%;
+}
+.content-main-newsletter .footer-newsletter {
+    background: #139a68 none repeat scroll 0 0;
+    display: inline-block;
+    height: 129px;
+    width: 100%;
+}
+.footer-newsletter .logo > img {
+    width: 300px;
+}
+.footer-newsletter .description {
+    color: white;
+}
+.footer-newsletter .logo, .footer-newsletter .description {
+    float: left;
+    height: 100%;
+}
+.footer-newsletter .logo {
+    width: 40%;
+    text-align: center;
+}
+
+.body-newsletter .saludo {
+  font-size: 35px;
+  font-family: "FlamaCondensed-Bold";
+    color: green;
+    font-size: 30px;
+}
+.body-newsletter .description, .body-newsletter .description-two, .block-form p {
+    font-size: 20px;
+}
+.body-newsletter .content-form {
+    margin: 30px auto;
+    width: 500px;
+}
+.content-form .description-two {
+    margin-top: 25px;
+}
+.footer-newsletter .description {
+    float: left;
+    font-size: 16px;
+    height: 100%;
+    width: 60%;
+}
+.footer-newsletter .description spam {
+    font-weight: bold;
+}
+.footer-newsletter .div {
+    background: #276A46 none repeat scroll 0 0;
+    border-radius: 0 0 5px 5px;
+    float: left;
+    height: 10px;
+    width: 100%;
+}
+.body-newsletter .content-form {
+    margin: 150px auto 50px;
+    width: 500px;
+}
+.body-newsletter .form-text.required {
+    border: medium none;
+    border-radius: 5px;
+    color: gray;
+    font-size: 16px;
+    height: 30px;
+    width: 350px;
+}
+.body-newsletter .form-submit {
+    background: #a5cc00 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    width: 185px;
+}
+.block-form-content label {
+    font-size: 15px;
+    margin: 0 auto 5px;
+    text-align: left;
+    width: 350px;
+}
+.block-form-content .issues-link, .block-form-content .feed-icon {
+    display: none;
+}
+#main-content .content-main-newsletter {
+    margin-top: 30px;
+}
+.footer-newsletter .description .content {
+    margin: 20px 50px;
+}
+.simplenews-subscribe .form-required {
+  display: none;
+}
+.page-newsletter .head-title.head-block {
+    background: none repeat scroll 0 0 #a5cc00;
+}
+.page-newsletter #main-content-header {
+    display: none;
+}
+.page-newsletter .logos-pos {
+    width: 200px;
+}
+
+.page-newsletter-confirm #main-content-header,
+.page-newsletter-confirm #main-content-header h1#page-title{
+  display: block;
+}
+.page-newsletter-confirm #main-content-header{
+  background-color: #a5cc00;
+  margin-top: 30px;
+  padding: 20px 35px;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.page-newsletter-confirm #main-content-header h1{
+   font-family: "FlamaCondensed-Bold";
+    font-size: 40px;
+    color: #fff;
+}
+.page-newsletter-confirm #simplenews-confirm-add-form,
+.page-newsletter-confirm #simplenews-confirm-removal-form{
+  border: 1px solid #333;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.page-newsletter-confirm #simplenews-confirm-add-form #edit-submit,
+.page-newsletter-confirm #simplenews-confirm-removal-form #edit-submit{
+  background-color: #bec2c4;
+  border: medium none;
+  color: #014b18;
+  margin: 0 10px;
+  padding: 5px 10px;
+
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.page-newsletter-confirm #simplenews-confirm-add-form #edit-cancel,
+.page-newsletter-confirm #simplenews-confirm-removal-form #edit-cancel{
+    background-color: #d1d4d5;
+  border: medium none;
+  color: #014b18;
+  margin: 0 10px;
+  padding: 5px 10px;
+
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
