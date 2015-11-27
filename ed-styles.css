@@ -2470,11 +2470,23 @@ td.td-claendariopage1{
 }
 .titulo-feriado-festivo .year-current, .titulo-feriado-festivo .year-more-one, .titulo-feriado-festivo .year-more-two {
     float: left;
-    width: 33.3%;
+    width: 32.7%;
+    
 }
+.titulo-feriado-festivo .year-current-date {
+  margin-right: 10px;
+}
+.titulo-feriado-festivo .year-more-one-date {
+  margin: 0 10px;
+}
+.titulo-feriado-festivo .year-more-two-date {
+  margin-left: 20px;
+}
+
 .view-footer .titulo-feriado-festivo {
-  display: inline-block;
-  width: 100%;
+    display: inline-block;
+    margin: 20px 0 5px;
+    width: 100%;
 }
 .view-calendario-de-feriados .item-list li.Festivo .views-field.views-field-field-fecha-feriado-1{
   text-align: right; 
@@ -2516,10 +2528,23 @@ td.td-claendariopage1{
   background-color: #fff;
   padding: 5px 0px;
 }
-.year-current > a, .year-more-one > a, .year-more-two > a {
-    padding: 5% 46%;
+.year-current .year-current-date, .year-more-one .year-more-one-date, .year-more-two .year-more-two-date {
+    border: 1px solid #bf9363;
+    color: #bf9363;
+    display: block;
+    font-size:18px;
+    height: 100%;
+    text-align: center;
     text-decoration: none;
+    width: 100%;
+    
 }
+.year-current .year-current-date.active, .year-more-one .year-more-one-date.active, .year-more-two .year-more-two-date.active {
+    background: #ff7f01;
+    color: #fff;
+    border: 1px solid #ff7f01;
+}
+
 .view-calendario-de-feriados .view-footer .leyenda{
     background-color: #ff7f00;
     color: #fff;
